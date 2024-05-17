@@ -1,4 +1,7 @@
-**NOTE:** This fork of AdMobUI switches to using the latest version of GoogleMobileAds, which is now provided by Google for Swift Package Manager. 
+**NOTE:** This fork of AdMobUI makes the following changes:
+
+- Switch to using the latest version of GoogleMobileAds, which is now provided by Google for Swift Package Manager.
+- Removes the `showingAds` UserDefault flag.
 
 # AdMobUI
 

@@ -18,8 +18,6 @@ import GoogleMobileAds
 #if canImport(GoogleMobileAds)
 public struct AnchoredAd: View {
     
-    @AppStorage("showingAds") private var showingAds: Bool = true
-    
     let ad: Advertisement
     
     @State public var height: CGFloat = 320
@@ -37,19 +35,15 @@ public struct AnchoredAd: View {
     }
     
     public var body: some View {
-        Group {
-            if showingAds {
-                AnchoredAdRepresentable(ad: ad)
-                    .frame(width: width, height: height)
-                    .onAppear {
-                        setFrame()
-                    }
-                    .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                        setFrame()
-                    }
-                    .listRowInsets(EdgeInsets())
+        AnchoredAdRepresentable(ad: ad)
+            .frame(width: width, height: height)
+            .onAppear {
+                setFrame()
             }
-        }
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                setFrame()
+            }
+            .listRowInsets(EdgeInsets())
     }
     
     func setFrame() {

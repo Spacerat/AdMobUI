@@ -13,8 +13,6 @@ import GoogleMobileAds
 #if canImport(GoogleMobileAds)
 public struct InlineAd: View {
     
-    @AppStorage("showingAds") private var showingAds: Bool = true
-    
     private let ad: Advertisement
     
     @State private var height: CGFloat = 44
@@ -24,23 +22,21 @@ public struct InlineAd: View {
     }
     
     public var body: some View {
-        if showingAds {
-            GeometryReader { geometry in
-                let adHeight = geometry.size.width * 0.61803398875
-                InlineAdRepresentable(
-                    ad: ad,
-                    size: CGSize(width: geometry.size.width, height: adHeight)
-                )
-                .frame(width: geometry.size.width, height: adHeight)
-                .cornerRadius(10)
-                .onAppear {
-                    self.height = adHeight
-                }
+        GeometryReader { geometry in
+            let adHeight = geometry.size.width * 0.61803398875
+            InlineAdRepresentable(
+                ad: ad,
+                size: CGSize(width: geometry.size.width, height: adHeight)
+            )
+            .frame(width: geometry.size.width, height: adHeight)
+            .cornerRadius(10)
+            .onAppear {
+                self.height = adHeight
             }
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(Color.clear)
-            .frame(height: height)
         }
+        .listRowInsets(EdgeInsets())
+        .listRowBackground(Color.clear)
+        .frame(height: height)
     }
 }
 
