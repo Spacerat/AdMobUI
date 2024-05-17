@@ -74,8 +74,8 @@ let package = Package(
     packages: [
         .package(
             name: "AdMobUI",
-            url: "https://github.com/Spacerat/AdMobUI.git",
-            .upToNextMajor(from: "1.1.0")
+            url: "https://github.com/briannadoubt/AdMobUI.git",
+            .upToNextMajor(from: "1.0.1")
         )
     ],
     targets: [
