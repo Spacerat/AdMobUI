@@ -73,9 +73,9 @@ let package = Package(
     name: "MySwiftPackage",
     packages: [
         .package(
-            name: "KeyWindow",
-            url: "https://github.com/briannadoubt/KeyWindow.git",
-            .upToNextMajor(from: "0.1.0")
+            name: "AdMobUI",
+            url: "https://github.com/Spacerat/AdMobUI.git",
+            .upToNextMajor(from: "1.1.0")
         )
     ],
     targets: [
