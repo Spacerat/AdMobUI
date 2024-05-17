@@ -1,5 +1,3 @@
-**NOTE:** This fork of AdMobUI switches to using the latest version of GoogleMobileAds, which is now provided by Google for Swift Package Manager. 
-
 # AdMobUI
 
 A simple AdMob ads wrapper for SwiftUI
